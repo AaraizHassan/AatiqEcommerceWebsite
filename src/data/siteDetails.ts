@@ -1,9 +1,9 @@
 export const siteDetails = {
-    siteName: 'Finwise',
+    siteName: 'Aatiq',
     siteUrl: 'https://finwise-omega.vercel.app/',
     metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+        title: 'Aatiq | Antiques and Jewelry',
+        description: 'Aatiq offers a curated collection of timeless antiques and exquisite jewelry, blending heritage craftsmanship with modern elegance.',
     },
     language: 'en-us',
     locale: 'en-US',
