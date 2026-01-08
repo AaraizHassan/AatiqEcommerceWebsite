@@ -13,32 +13,32 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
-      <Logos />
-      <Container>
-        <Benefits />
+      {/* <Logos /> */}
+      {/* <Container> */}
+        {/* <Benefits /> */}
 
-        <Section
+        {/* <Section
           id="pricing"
           title="Pricing"
           description="Simple, transparent pricing. No surprises."
-        >
-          <Pricing />
-        </Section>
+        > */}
+          {/* <Pricing /> */}
+        {/* </Section> */}
 
-        <Section
+        {/* <Section
           id="testimonials"
           title="What Our Clients Say"
           description="Hear from those who have partnered with us."
         >
           <Testimonials />
-        </Section>
+        </Section> */}
 
-        <FAQ />
+        {/* <FAQ /> */}
 
-        <Stats />
+        {/* <Stats /> */}
         
-        <CTA />
-      </Container>
+        {/* <CTA /> */}
+      {/* </Container> */}
     </>
   );
 };
