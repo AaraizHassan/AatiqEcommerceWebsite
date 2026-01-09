@@ -10,15 +10,15 @@ export const footerDetails: {
     subheading: "Antiques and Jewelry",
     quickLinks: [
         {
-            text: "Features",
+            text: "Antiques",
             url: "#features"
         },
         {
-            text: "Pricing",
+            text: "Jewelry",
             url: "#pricing"
         },
         {
-            text: "Testimonials",
+            text: "Contact Us",
             url: "#testimonials"
         }
     ],

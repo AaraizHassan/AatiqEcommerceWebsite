@@ -19,7 +19,8 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
+        // <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
+        <header className="bg-transparent relative top-0 left-0 right-0 z-50 mx-auto w-full">
             <Container className="!px-0">
                 <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-1 px-5 md:py-1">
                     {/* Logo */}
@@ -52,11 +53,11 @@ const Header: React.FC = () => {
                                 </Link>
                             </li>
                         ))}
-                        <li>
+                        {/* <li>
                             <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
                                 Download
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
 
                     {/* Mobile Menu Button */}
