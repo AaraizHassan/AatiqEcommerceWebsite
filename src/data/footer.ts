@@ -19,7 +19,7 @@ export const footerDetails: {
         },
         {
             text: "Contact Us",
-            url: "#testimonials"
+            url: "/contact"
         }
     ],
     email: 'address@yoursite.com',
