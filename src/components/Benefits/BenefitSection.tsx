@@ -1,99 +1,92 @@
 "use client"
-import Image from "next/image";
-import clsx from "clsx";
-import { motion, Variants } from "framer-motion"
 
-import BenefitBullet from "./BenefitBullet";
-import SectionTitle from "../SectionTitle";
-import { IBenefit } from "@/types";
+import Image from "next/image"
+import { motion } from "framer-motion"
 
-interface Props {
-    benefit: IBenefit;
-    imageAtRight?: boolean;
+import { IBenefit } from "@/types"
+
+interface ProductModalProps {
+  product: IBenefit
+  onClose: () => void
 }
 
-const containerVariants: Variants = {
-    offscreen: {
-        opacity: 0,
-        y: 100
-    },
-    onscreen: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            type: "spring",
-            bounce: 0.2,
-            duration: 0.9,
-            delayChildren: 0.2,
-            staggerChildren: 0.1,
-        }
-    }
-};
+const BenefitSection: React.FC<ProductModalProps> = ({ product, onClose }) => {
+  return (
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        className="relative bg-white max-w-3xl w-full rounded-xl p-6 overflow-y-auto max-h-[90vh]"
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-xl font-bold"
+        >
+          ✕
+        </button>
 
-export const childVariants = {
-    offscreen: {
-        opacity: 0,
-        x: -50,
-    },
-    onscreen: {
-        opacity: 1,
-        x: 0,
-        transition: {
-            type: "spring",
-            bounce: 0.2,
-            duration: 1,
-        }
-    },
-};
+        {/* Images */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {product.images?.map((img: string, index: number) => (
+            <Image
+              key={index}
+              src={img}
+              alt={product.title}
+              width={400}
+              height={300}
+              className="rounded-lg object-cover"
+            />
+          ))}
+        </div>
 
-const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
-    const { title, description, imageSrc, bullets } = benefit;
+        {/* Product info */}
+        <h3 className="text-2xl font-semibold mt-6">
+          {product.title}
+        </h3>
 
-    return (
-        <section className="benefit-section">
-            <motion.div
-                className="flex flex-wrap flex-col items-center justify-center gap-2 lg:flex-row lg:gap-20 lg:flex-nowrap mb-24"
-                variants={containerVariants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true }}
-            >
-                <div
-                    className={clsx("flex flex-wrap items-center w-full max-w-lg", { "justify-start": imageAtRight, "lg:order-1 justify-end": !imageAtRight })}
-                    
-                >
-                    <div className="w-full  text-center lg:text-left ">
-                        <motion.div
-                            className="flex flex-col w-full"
-                            variants={childVariants}
-                        >
-                            <SectionTitle>
-                                <h3 className="lg:max-w-2xl">
-                                    {title}
-                                </h3>
-                            </SectionTitle>
+        <p className="text-foreground-accent mt-2">
+          {product.description}
+        </p>
 
-                            <p className="mt-1.5 mx-auto lg:ml-0 leading-normal text-foreground-accent">
-                                {description}
-                            </p>
-                        </motion.div>
+        {/* Contact form */}
+        <form className="mt-6 grid grid-cols-1 gap-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            required
+            className="border px-4 py-2 rounded"
+          />
+          <input
+            type="email"
+            placeholder="Email Address"
+            required
+            className="border px-4 py-2 rounded"
+          />
+          <input
+            type="tel"
+            placeholder="Phone Number (optional)"
+            className="border px-4 py-2 rounded"
+          />
+          <textarea
+            placeholder="Message"
+            rows={4}
+            className="border px-4 py-2 rounded"
+          />
 
-                        <div className="mx-auto lg:ml-0 w-full">
-                            {bullets.map((item, index) => (
-                                <BenefitBullet key={index} title={item.title} icon={item.icon} description={item.description} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
+          {/* Hidden product name */}
+          <input type="hidden" name="product" value={product.title} />
 
-                <div className={clsx("mt-5 lg:mt-0", { "lg:order-2": imageAtRight })}>
-                    <div className={clsx("w-fit flex", { "justify-start": imageAtRight, "justify-end": !imageAtRight })}>
-                        <Image src={imageSrc} alt="title" width="384" height="762" quality={100} className="lg:ml-0" />
-                    </div>
-                </div>
-            </motion.div>
-        </section>
-    );
+          <button
+            type="submit"
+            className="bg-primary text-black py-2 rounded font-semibold"
+          >
+            Enquire About {product.title}
+          </button>
+        </form>
+      </motion.div>
+    </div>
+  )
 }
 
 export default BenefitSection

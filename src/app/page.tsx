@@ -8,6 +8,7 @@ import Container from "@/components/Container";
 // import Section from "@/components/Section";
 // import Stats from "@/components/Stats";
 // import CTA from "@/components/CTA";
+// import ProductsGrid from "@/components/Products/ProductsGrid";
 
 const HomePage: React.FC = () => {
   return (

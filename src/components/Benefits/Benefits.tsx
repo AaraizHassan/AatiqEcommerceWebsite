@@ -1,16 +1,52 @@
-import BenefitSection from "./BenefitSection"
+"use client"
 
+import { useState } from "react"
+import Image from "next/image"
 import { benefits } from "@/data/benefits"
+import { IBenefit } from "@/types"
+import ProductModal from "./BenefitSection"
 
 const Benefits: React.FC = () => {
-    return (
-        <div id="features">
-            <h2 className="sr-only">Features</h2>
-            {benefits.map((item, index) => {
-                return <BenefitSection key={index} benefit={item} imageAtRight={index % 2 !== 0} />
-            })}
-        </div>
-    )
+  const [activeProduct, setActiveProduct] = useState<IBenefit | null>(null)
+
+  return (
+    <section id="products" className="mt-24">
+      <h2 className="text-3xl font-bold text-center mb-12">
+        Our Products
+      </h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {benefits.map((product, index) => (
+          <div
+            key={index}
+            onClick={() => setActiveProduct(product)}
+            className="cursor-pointer rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform"
+          >
+            <Image
+              src={product.imageSrc}
+              alt={product.title}
+              width={400}
+              height={400}
+              className="object-cover w-full h-64"
+            />
+            <div className="p-4">
+              <h3 className="font-semibold text-lg">{product.title}</h3>
+              <p className="text-sm text-foreground-accent mt-1">
+                {product.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {activeProduct && (
+        <ProductModal
+          product={activeProduct}
+          onClose={() => setActiveProduct(null)}
+        />
+      )}
+    </section>
+  )
 }
 
 export default Benefits

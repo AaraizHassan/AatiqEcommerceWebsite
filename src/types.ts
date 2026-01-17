@@ -3,12 +3,20 @@ export interface IMenuItem {
     url: string;
 }
 
+// export interface IBenefit {
+//     title: string;
+//     description: string;
+//     imageSrc: string;
+//     bullets: IBenefitBullet[]
+// }
+
 export interface IBenefit {
-    title: string;
-    description: string;
-    imageSrc: string;
-    bullets: IBenefitBullet[]
+  title: string
+  description: string
+  imageSrc: string
+  images?: string[]
 }
+
 
 export interface IBenefitBullet {
     title: string;
