@@ -22,13 +22,22 @@ const Benefits: React.FC = () => {
             onClick={() => setActiveProduct(product)}
             className="cursor-pointer rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform"
           >
-            <Image
+            {/* <Image
               src={product.imageSrc}
               alt={product.title}
               width={400}
               height={400}
               className="object-cover w-full h-64"
+            /> */}
+            <Image
+              src={product.imageSrc}
+              alt={product.title}
+              width={400}
+              height={400}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover w-full h-64"
             />
+
             <div className="p-4">
               <h3 className="font-semibold text-lg">{product.title}</h3>
               <p className="text-sm text-foreground-accent mt-1">

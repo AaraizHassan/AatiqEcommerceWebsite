@@ -29,12 +29,22 @@ const BenefitSection: React.FC<ProductModalProps> = ({ product, onClose }) => {
         {/* Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {product.images?.map((img: string, index: number) => (
+            // <Image
+            //   key={index}
+            //   src={img}
+            //   alt={product.title}
+            //   width={400}
+            //   height={300}
+            //   className="rounded-lg object-cover"
+            // />
             <Image
               key={index}
               src={img}
               alt={product.title}
               width={400}
               height={300}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="lazy"
               className="rounded-lg object-cover"
             />
           ))}
