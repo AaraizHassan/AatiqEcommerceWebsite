@@ -8,8 +8,8 @@ export const benefits: IBenefit[] = [
     images: ["/images/p (1).webp"],
   },
   {
-    title: "Product 2",
-    description: "Description for product 2",
+    title: "AN UMAYYAD MONOCHROME MOULDED POTTERY EWER",
+    description: "of bulbous form with slightly flaring cylindrical neck terminating in a trough spout, with strap handle on a short foot, moulded with two bands containing zig-zag friezes filled with circle motifs 25 cm. high",
     imageSrc: "/images/p (2).webp",
     images: ["/images/p (2).webp"],
   },
