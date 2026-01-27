@@ -39,33 +39,19 @@ const Header: React.FC = () => {
                             </span>
                         </Link>
 
-                        {/* Desktop Menu (Below Logo) */}
                         {/* Desktop Menu (Below Logo, Evenly Distributed) */}
-                        <ul className="hidden md:flex w-full max-w-4xl justify-between mt-1">
+                        <ul className="hidden md:flex w-full max-w-4xl justify-center gap-48 mt-1">
                             {menuItems.map(item => (
                                 <li key={item.text}>
                                     <Link
                                         href={item.url}
-                                        className="text-foreground hover:text-foreground-accent transition-colors"
+                                        className="px-3 py-1 text-foreground hover:text-foreground-accent transition-colors"
                                     >
                                         {item.text}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
-
-                        {/* <ul className="hidden md:flex space-x-8 mt-3">
-                            {menuItems.map(item => (
-                                <li key={item.text}>
-                                    <Link
-                                        href={item.url}
-                                        className="text-foreground hover:text-foreground-accent transition-colors"
-                                        >
-                                        {item.text}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul> */}
                     </div>
 
                     {/* Mobile Menu Button — unchanged */}
