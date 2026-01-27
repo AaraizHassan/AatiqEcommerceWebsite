@@ -22,46 +22,54 @@ const Header: React.FC = () => {
         // <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
         <header className="bg-transparent relative top-0 left-0 right-0 z-50 mx-auto w-full">
             <Container className="!px-0">
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-1 px-5 md:py-1">
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2">
-                        <Image
-                            src="/images/Logo.png"
-                            alt="Aatiq Logo"
-                            width={80}
-                            height={80}
-                            className="object-contain"
-                            priority
-                        />
-                        <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
-                            {siteDetails.siteName}
-                        </span>
-                    </Link>
-                    {/* <Link href="/" className="flex items-center gap-2">
-                        <FaFingerprint className="text-foreground min-w-fit w-7 h-7" />
-                        <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
-                            {siteDetails.siteName}
-                        </span>
-                    </Link> */}
+                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-center items-center py-3 px-5 md:py-4 relative">
+                    {/* Logo + Site Name (Centered on Desktop) */}
+                    <div className="flex flex-col items-center">
+                        <Link href="/" className="flex items-center gap-2">
+                            <Image
+                                src="/images/Logo.png"
+                                alt="Aatiq Logo"
+                                width={80}
+                                height={80}
+                                className="object-contain"
+                                priority
+                            />
+                            <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
+                                {siteDetails.siteName}
+                            </span>
+                        </Link>
 
-                    {/* Desktop Menu */}
-                    <ul className="hidden md:flex space-x-6">
-                        {menuItems.map(item => (
-                            <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-foreground-accent transition-colors">
-                                    {item.text}
-                                </Link>
-                            </li>
-                        ))}
-                        {/* <li>
-                            <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
-                                Download
-                            </Link>
-                        </li> */}
-                    </ul>
+                        {/* Desktop Menu (Below Logo) */}
+                        {/* Desktop Menu (Below Logo, Evenly Distributed) */}
+                        <ul className="hidden md:flex w-full max-w-4xl justify-between mt-1">
+                            {menuItems.map(item => (
+                                <li key={item.text}>
+                                    <Link
+                                        href={item.url}
+                                        className="text-foreground hover:text-foreground-accent transition-colors"
+                                    >
+                                        {item.text}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
 
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
+                        {/* <ul className="hidden md:flex space-x-8 mt-3">
+                            {menuItems.map(item => (
+                                <li key={item.text}>
+                                    <Link
+                                        href={item.url}
+                                        className="text-foreground hover:text-foreground-accent transition-colors"
+                                        >
+                                        {item.text}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul> */}
+                    </div>
+
+                    {/* Mobile Menu Button — unchanged */}
+                    <div className="md:hidden absolute right-5 top-3 flex items-center">
                         <button
                             onClick={toggleMenu}
                             type="button"
@@ -78,6 +86,7 @@ const Header: React.FC = () => {
                         </button>
                     </div>
                 </nav>
+
             </Container>
 
             {/* Mobile Menu with Transition */}
@@ -89,7 +98,7 @@ const Header: React.FC = () => {
                 leave="transition ease-in duration-75 transform"
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
-            >
+                >
                 <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
                     <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
                         {menuItems.map(item => (
