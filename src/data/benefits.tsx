@@ -14,8 +14,8 @@ export const benefits: IBenefit[] = [
     images: ["/images/p (2).webp"],
   },
   {
-    title: "Product 3",
-    description: "Description for product 3",
+    title: "AN UMAYYAD SPLASHWARE MOULDED POTTERY EWER",
+    description: "with inverted pear-shaped body, slightly tapering cylindrical neck with trough spout and strap handle, the shoulder moulded with a band of interlocking circles containing chevron motifs, the almond-shape intersections raised, below a band of zig-zag pattern, all under a yellow glaze with splashes of green 19 cm. high",
     imageSrc: "/images/p (3).webp",
     images: ["/images/p (3).webp"],
   },
