@@ -607,4 +607,28 @@ export const benefits: IBenefit[] = [
     imageSrc: "/images/p (101).webp",
     images: ["/images/p (101).webp"],
   },
+  {
+    title: "Product 102",
+    description: "Description for product 102",
+    imageSrc: "/images/p (102).webp",
+    images: ["/images/p (102).webp"],
+  },
+  {
+    title: "Product 103",
+    description: "Description for product 103",
+    imageSrc: "/images/p (103).webp",
+    images: ["/images/p (103).webp"],
+  },
+  {
+    title: "Product 104",
+    description: "Description for product 104",
+    imageSrc: "/images/p (104).webp",
+    images: ["/images/p (104).webp"],
+  },
+  {
+    title: "Product 105",
+    description: "Description for product 105",
+    imageSrc: "/images/p (105).webp",
+    images: ["/images/p (105).webp"],
+  },
 ]
