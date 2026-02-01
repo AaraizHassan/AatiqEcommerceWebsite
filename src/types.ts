@@ -15,6 +15,8 @@ export interface IBenefit {
   description: string
   imageSrc: string
   images?: string[]
+  category: string
+  age: string
 }
 
 
