@@ -532,20 +532,8 @@ export const benefits: IBenefit[] = [
   {
     title: "Product 95",
     description: "Description for product 95",
-    imageSrc: "/images/p (95).webp",
-    images: ["/images/p (95).webp"],
-  },
-  {
-    title: "Product 96",
-    description: "Description for product 96",
-    imageSrc: "/images/p (96).webp",
-    images: ["/images/p (96).webp"],
-  },
-  {
-    title: "Product 97",
-    description: "Description for product 97",
     imageSrc: "/images/p (97).webp",
-    images: ["/images/p (97).webp"],
+    images: ["/images/p (95).webp", "/images/p (96).webp", "/images/p (97).webp"],
   },
   {
     title: "A SELJUK GOLD RING MOUNTED WITH SPINAL",
