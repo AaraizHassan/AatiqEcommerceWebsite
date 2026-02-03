@@ -103,10 +103,21 @@ const Benefits: React.FC = () => {
           className="border rounded px-4 py-2"
         >
           <option value="All">All Ages</option>
+          <option value="1st-5th Century">1st-5th Century</option>
+          <option value="7th Century">7th Century</option>
+          <option value="7th-8th Century">7th-8th Century</option>
+          <option value="8th Century">8th Century</option>
           <option value="9th–10th Century">9th–10th Century</option>
-          <option value="12th Century">12th Century</option>
           <option value="10th Century">10th Century</option>
+          <option value="10th–11th Century">10th–11th Century</option>
+          <option value="11th Century">11th Century</option>
+          <option value="12th Century">12th Century</option>
+          <option value="15th Century">15th Century</option>
+          <option value="15th-16th Century">15th-16th Century</option>
+          <option value="16th Century">16th Century</option>
+          <option value="17th-18th Century">17th-18th Century</option>
           <option value="18th Century">18th Century</option>
+          <option value="18th-19th Century">18th-19th Century</option>
         </select>
       </div>
 
