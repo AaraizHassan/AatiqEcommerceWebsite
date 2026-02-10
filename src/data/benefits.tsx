@@ -662,7 +662,7 @@ export const benefits: IBenefit[] = [
     description: "Persia, 15th and 16th century. Comprising five circular and one octagonal examples in various shades and types of nephrite, one engraved with religious invocations forming a geometric pattern, the other five with the names of the owners, one drilled, one with slight chip largest. 1in. (2.5cm.) diam. (6)",
     imageSrc: "/images/p (89).webp",
     images: ["/images/p (89).webp"],
-    category: "All",
+    category: "Jewelry",
     age: "15th-16th Century",
   },
   {
