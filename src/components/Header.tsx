@@ -22,30 +22,39 @@ const Header: React.FC = () => {
         // <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
         <header className="bg-transparent relative top-0 left-0 right-0 z-50 mx-auto w-full">
             <Container className="!px-0">
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-center items-center py-3 px-5 md:py-4 relative">
+                {/* <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-center items-center py-3 px-5 md:py-4 relative"> */}
+                {/* <nav className="bg-white md:bg-transparent mx-auto flex justify-center items-center py-1 md:py-3 px-5 relative border-b border-gray-200"> */}
+                <nav className="bg-white md:bg-transparent mx-auto flex items-center py-2 px-5 border-b border-gray-200">
                     {/* Logo + Site Name (Centered on Desktop) */}
-                    <div className="flex flex-col items-center">
+                    {/* <div className="flex flex-col items-center"> */}
+                    <div className="flex items-center justify-between w-full">
                         <Link href="/" className="flex items-center gap-2">
                             <Image
                                 src="/images/Logo.png"
                                 alt="Aatiq Logo"
-                                width={80}
-                                height={80}
+                                width={50}
+                                height={50}
                                 className="object-contain"
                                 priority
                             />
-                            <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
+                            {/* <span className="manrope text-xl font-semibold text-foreground cursor-pointer"> */}
+                            <span className="manrope text-lg tracking-wide text-gray-800">
                                 {siteDetails.siteName}
                             </span>
                         </Link>
 
                         {/* Desktop Menu (Below Logo, Evenly Distributed) */}
-                        <ul className="hidden md:flex w-full max-w-4xl justify-center gap-48 mt-1">
+                        {/* <ul className="hidden md:flex w-full max-w-4xl justify-center gap-48 mt-1"> */}
+                        {/* <ul className="hidden md:flex justify-center gap-10 mt-2"> */}
+                        <ul className="hidden md:flex items-center gap-10 mx-auto">
+                        {/* <ul className="hidden md:flex items-center gap-10"> */}
                             {menuItems.map(item => (
                                 <li key={item.text}>
                                     <Link
                                         href={item.url}
-                                        className="px-3 py-1 text-foreground hover:text-foreground-accent transition-colors"
+                                        // className="px-3 py-1 text-foreground hover:text-foreground-accent transition-colors"
+                                        // className="px-2 py-1 text-sm uppercase tracking-widest text-gray-700 hover:text-black transition-colors"
+                                        className="px-2 py-1 text-sm uppercase tracking-widest text-gray-700 hover:text-black transition-all duration-200"
                                     >
                                         {item.text}
                                     </Link>
@@ -55,7 +64,8 @@ const Header: React.FC = () => {
                     </div>
 
                     {/* Mobile Menu Button — unchanged */}
-                    <div className="md:hidden absolute right-5 top-3 flex items-center">
+                    {/* <div className="md:hidden absolute right-5 top-3 flex items-center"> */}
+                    <div className="md:hidden flex items-center">
                         <button
                             onClick={toggleMenu}
                             type="button"
